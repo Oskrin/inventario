@@ -56,7 +56,6 @@ if ($search == 'false') {
     if ($_GET['searchOper'] == 'ni') {
         $SQL = "select O.id_ordenes, P.codigo, P.cod_barras, P.articulo, O.sub_total from ordenes_produccion O, productos P, usuario U where O.cod_productos = P.cod_productos and O.id_usuario=U.id_usuario and $_GET[searchField] not like '%$_GET[searchString]%' ORDER BY $sidx $sord offset $start limit $limit";
     }
-    //echo $SQL;
 }
 $result = pg_query($SQL);
 header("Content-type: text/xml;charset=utf-8");
