@@ -69,6 +69,7 @@ $cont1++;
         <div class="navbar navbar-fixed-top">
             <div class="navbar-inner">
                 <div class="container">
+
                     <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -76,10 +77,10 @@ $cont1++;
                     </a>
 
                     <a class="brand" href="">
-                        <?php echo $_SESSION['empresa']; ?>         
-                    </a>			
-                </div> 
-            </div> 
+                        <h1><?php echo $_SESSION['empresa']; ?></h1>				
+                    </a>
+                </div>
+            </div>
         </div> 
 
         <!-- /Inicio  Menu Principal -->
@@ -223,10 +224,10 @@ $cont1++;
                                                                 <td><input type="text" name="codigo" id="codigo" class="campo" style="width: 180px"  placeholder="Buscar..."/></td>
                                                                 <td><input type="text" name="producto" id="producto" class="campo" style="width: 200px"  placeholder="Buscar..."/></td>
                                                                 <td><input type="text" name="cantidad" id="cantidad" class="campo" style="width: 60px" maxlength="10"/></td>
-                                                                <td><input type="text" name="p_venta" id="p_venta" style="width: 60px" class="campo"/></td>
+                                                                <td><input type="text" name="p_venta" id="p_venta" style="width: 60px" class="campo" maxlength="10"/></td>
                                                                 <td><input type="text" name="descuento" id="descuento" class="campo" readonly style="width: 60px" maxlength="10" placeholder="%" /></td>
                                                                 <td><input type="text" name="disponibles" id="disponibles" class="campo" readonly style="width: 60px" maxlength="10" value=""/></td>
-                                                                <td><input type="button" class="btn btn-primary" id='btncargar' style="margin-top: -10px" value="Cargar"></td>
+                                                                <!--<td><input type="button" class="btn btn-primary" id='btncargar' style="margin-top: -10px" value="Cargar"></td>-->
                                                                 <td><input type="hidden" name="iva_producto" id="iva_producto" class="campo" /></td>
                                                                 <td><input type="hidden" name="carga_series" id="carga_series" class="campo" /></td>
                                                                 <td><input type="hidden" name="cod_producto" id="cod_producto" class="campo" /></td>

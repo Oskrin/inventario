@@ -9,16 +9,12 @@ function menu_1() {
             <li><a href="" target="_parent">Inicio</a></li>
             <li><a href="" target="_parent">Ingresos</a>
                 <ul>
-                    <li><a href="" target="_parent">Usuarios</a>
-                    <ul>
-                            <li><a href="../html/usuarios.php" target="_blank">Crear Usuarios</a></li>
-                    </ul>
-                    </li>
+                    <li><a href="../html/usuarios.php" target="_blank">Usuarios</a></li>
                     <li><a href="../html/clientes.php" target="_blank">Clientes</a></li>
                     <li><a href="../html/proveedores.php"target="_blank">Proveedores</a></li>
                     <li><a href="">Productos</a>
                         <ul>
-                            <li><a href="" target="_parent">Clasificacion</a>
+                            <li><a href="" target="_parent">Clasificación</a>
                             <ul>
                                   <li><a href="../html/categorias.php" target="_blank">Categorias</a></li>
                                   <li><a href="../html/marcas.php" target="_blank">Marcas</a></li>
@@ -49,7 +45,7 @@ function menu_1() {
                     </li>
                     <li><a href="" target="_parent">Ventas</a>
                         <ul>
-                            <li><a href="../html/factura_venta.php" target="_blank">Ventas facturacion</a></li>
+                            <li><a href="../html/factura_venta.php" target="_blank">Ventas facturación</a></li>
                             <li><a href="../html/notasCredito.php" target="_blank">Notas de crédito</a></li>
                         </ul>
                     </li>
@@ -153,14 +149,6 @@ function menu_1() {
                             <li><a href="" id="lista_proformas">Lista de Proformas</a></li>
                         </ul>
                    </li> 
-                  <li><a href="#">Mantenimiento</a>
-                      <ul>
-                          <li><a href="" id="equipos_recibidos">Lista de Registo de Equipos</a></li>
-                          <li><a href="" id="equipos_reparados">Lista equipos Reparados</a></li>
-                          <li><a href="" id="equipos_en_reparacion">Lista equipos en Reparación</a></li>
-                          <li><a href="" id="equipos_entregados">Lista de Equipos Entregados</a></li>
-                      </ul>
-                  </li>
                   <li><a href="#">Gastos</a>
                       <ul>
                         <li><a href="" id="gastos">Gastos por factura</a></li> 

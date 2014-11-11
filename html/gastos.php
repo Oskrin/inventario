@@ -63,6 +63,7 @@ $cont1++;
         <div class="navbar navbar-fixed-top">
             <div class="navbar-inner">
                 <div class="container">
+
                     <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -70,10 +71,10 @@ $cont1++;
                     </a>
 
                     <a class="brand" href="">
-                        <?php echo $_SESSION['empresa']; ?>         
-                    </a>			
-                </div> 
-            </div> 
+                        <h1><?php echo $_SESSION['empresa']; ?></h1>				
+                    </a>
+                </div>
+            </div>
         </div> 
 
         <!-- /Inicio  Menu Principal -->
@@ -102,7 +103,7 @@ $cont1++;
                         <div class="span12">      		
                             <div class="widget ">
                                 <div class="widget-header">
-                                    <i class="icon-list-alt"></i>
+                                    <i class="icon-dollar"></i>
                                     <h3>GASTOS INTERNOS</h3>
                                 </div> <!-- /widget-header -->
 
@@ -153,7 +154,7 @@ $cont1++;
                                                     <fieldset>
                                                         <br />
                                                         <div class="widget widget-nopad">
-                                                            <div class="widget-header"> <i class="icon-list-alt"></i>
+                                                            <div class="widget-header"> <i class="icon-money"></i>
                                                                 <h3>REGISTRO GASTOS</h3>
                                                             </div>
                                                             <!-- /widget-header -->

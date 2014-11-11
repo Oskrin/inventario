@@ -749,7 +749,7 @@ jQuery().UItoTop({ easingType: 'easeOutQuart' });
             {name: 'codigo', index: 'codigo', editable: false, search: false, hidden: false, editrules: {edithidden: false}, align: 'center',
                 frozen: true, width: 100},
             {name: 'detalle', index: 'detalle', editable: false, frozen: true, editrules: {required: true}, align: 'center', width: 290},
-            {name: 'cantidad', index: 'cantidad', editable: true, frozen: true, editrules: {required: true}, align: 'center', width: 70},
+            {name: 'cantidad', index: 'cantidad', editable: false, frozen: true, editrules: {required: true}, align: 'center', width: 70},
             {name: 'precio_u', index: 'precio_u', editable: false, search: false, frozen: true, editrules: {required: true}, align: 'center', width: 110},
             {name: 'descuento', index: 'descuento', editable: false, search: false, frozen: true, editrules: {required: true}, align: 'center', width: 110},
             {name: 'total', index: 'total', editable: false, search: false, frozen: true, editrules: {required: true}, align: 'center', width: 110},
@@ -959,7 +959,7 @@ jQuery().UItoTop({ easingType: 'easeOutQuart' });
            var ret = jQuery("#list2").jqGrid('getRowData', id);
            var valor = ret.id_egresos;
             /////////////agregregar egresos////////
-            $("#comprobante").val(ret.id_egresos);
+            $("#comprobante").val(valor);
             $("#btnGuardar").attr("disabled", true);
             $("#btnModificar").attr("disabled", true);
 
@@ -1019,8 +1019,7 @@ jQuery().UItoTop({ easingType: 'easeOutQuart' });
             });
  
         $("#buscar_egresos").dialog("close");
-        }
-        else {
+        } else {
             alertify.alert("Seleccione un Egreso");
         }
     }
@@ -1061,7 +1060,7 @@ jQuery().UItoTop({ easingType: 'easeOutQuart' });
            var ret = jQuery("#list2").jqGrid('getRowData', id);
            var valor = ret.id_egresos;
             /////////////agregregar egresos////////
-            $("#comprobante").val(ret.id_egresos);
+            $("#comprobante").val(valor);
             $("#btnGuardar").attr("disabled", true);
             $("#btnModificar").attr("disabled", true);
 

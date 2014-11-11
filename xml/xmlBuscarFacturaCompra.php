@@ -30,7 +30,7 @@ if ($search == 'false') {
         $SQL = "select F.id_factura_compra, P.identificacion_pro, P.empresa_pro, F.num_serie, F.total_compra, F.fecha_actual from factura_compra F, proveedores P, usuario U where F.id_proveedor = P.id_proveedor and F.id_usuario = U.id_usuario and $_GET[searchField] = '$_GET[searchString]' ORDER BY $sidx $sord offset $start limit $limit";
     }
     if ($_GET['searchOper'] == 'ne') {
-        $SQL = "select F.id_factura_compra, P.identificacion_pro, P.empresa_pro, F.num_serie, F.total_compra, F.fecha_actual from factura_compra F, proveedores P, usuario U where F.id_proveedor = P.id_proveedor and F.id_usuario = U.id_usuarioand $_GET[searchField] != '$_GET[searchString]' ORDER BY $sidx $sord offset $start limit $limit";
+        $SQL = "select F.id_factura_compra, P.identificacion_pro, P.empresa_pro, F.num_serie, F.total_compra, F.fecha_actual from factura_compra F, proveedores P, usuario U where F.id_proveedor = P.id_proveedor and F.id_usuario = U.id_usuario and $_GET[searchField] != '$_GET[searchString]' ORDER BY $sidx $sord offset $start limit $limit";
     }
     if ($_GET['searchOper'] == 'bw') {
         $SQL = "select F.id_factura_compra, P.identificacion_pro, P.empresa_pro, F.num_serie, F.total_compra, F.fecha_actual from factura_compra F, proveedores P, usuario U where F.id_proveedor = P.id_proveedor and F.id_usuario = U.id_usuario and $_GET[searchField] like '$_GET[searchString]%' ORDER BY $sidx $sord offset $start limit $limit";
