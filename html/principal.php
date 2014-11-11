@@ -84,10 +84,16 @@ include '../menus/menu.php';
                                     </div> <!-- /widget-header -->
 
                                     <div class="widget-content">
-                                        <div class="tabbable" id="centro">
+                                    <style type="text/css">
+                                        .aur{
+                                            background: #222222;
+                                            
+                                        }
+                                    </style>
+                                        <div class="tabbable aur" id="centro" >
                                             <fieldset>
                                                 <div align="center">
-                                                    <img src="../images/logo_empresa.jpg" width="30%" height="20%" /> 
+                                                    <img src="../images/logo_empresa.fw.png" width="70%" /> 
                                                 </div>
                                             </fieldset>   
                                         </div>
