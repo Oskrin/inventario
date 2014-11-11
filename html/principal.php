@@ -84,7 +84,7 @@ include '../menus/menu.php';
                                     <h3>Responsable:  <?php echo $_SESSION['nombres'] ?></h3>
                                 </div> <!-- /widget-header -->
 
-<<<<<<< HEAD
+
                                     <div class="widget-content">
                                     <style type="text/css">
                                         .aur{
@@ -102,18 +102,7 @@ include '../menus/menu.php';
                                     </div> 
                                 </div>
                             </div> 
-=======
-                                <div class="widget-content">
-                                    <div class="tabbable" id="centro">
-                                        <fieldset>
-                                            <div align="center">
-                                                <img src="../images/logo_empresa.jpg" width="30%" height="20%" /> 
-                                            </div>
-                                        </fieldset>   
-                                    </div>
-                                </div> 
-                            </div>
->>>>>>> origin/master
+
                         </div> 
                     </div> 
                 </div> 
