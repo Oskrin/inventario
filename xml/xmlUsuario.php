@@ -29,34 +29,34 @@ if ($search == 'false') {
     $campo = $_GET['searchField'];
   
     if ($_GET['searchOper'] == 'eq') {
-        $SQL = "select U.id_usuario, U.nombre_usuario, U.apellido_usuario, U.ci_usuario, U.telefono_usuario, U.celular_usuario, U.clave, U.email_usuario, U.direccion_usuario, U.usuario, U.cargo_usuario from usuario U and $campo = '$_GET[searchString]' ORDER BY $sidx $sord offset $start limit $limit";
+        $SQL = "select U.id_usuario, U.nombre_usuario, U.apellido_usuario, U.ci_usuario, U.telefono_usuario, U.celular_usuario, U.clave, U.email_usuario, U.direccion_usuario, U.usuario, U.cargo_usuario from usuario U where $campo = '$_GET[searchString]' ORDER BY $sidx $sord offset $start limit $limit";
     }
     if ($_GET['searchOper'] == 'ne') {
-        $SQL = "select U.id_usuario, U.nombre_usuario, U.apellido_usuario, U.ci_usuario, U.telefono_usuario, U.celular_usuario, U.clave, U.email_usuario, U.direccion_usuario, U.usuario, U.cargo_usuario from usuario U and $campo != '$_GET[searchString]' ORDER BY $sidx $sord offset $start limit $limit";
+        $SQL = "select U.id_usuario, U.nombre_usuario, U.apellido_usuario, U.ci_usuario, U.telefono_usuario, U.celular_usuario, U.clave, U.email_usuario, U.direccion_usuario, U.usuario, U.cargo_usuario from usuario U where $campo != '$_GET[searchString]' ORDER BY $sidx $sord offset $start limit $limit";
     }
     if ($_GET['searchOper'] == 'bw') {
-        $SQL = "select U.id_usuario, U.nombre_usuario, U.apellido_usuario, U.ci_usuario, U.telefono_usuario, U.celular_usuario, U.clave, U.email_usuario, U.direccion_usuario, U.usuario, U.cargo_usuario from usuario U and $campo like '$_GET[searchString]%' ORDER BY $sidx $sord offset $start limit $limit";
+        $SQL = "select U.id_usuario, U.nombre_usuario, U.apellido_usuario, U.ci_usuario, U.telefono_usuario, U.celular_usuario, U.clave, U.email_usuario, U.direccion_usuario, U.usuario, U.cargo_usuario from usuario U where $campo like '$_GET[searchString]%' ORDER BY $sidx $sord offset $start limit $limit";
     }
     if ($_GET['searchOper'] == 'bn') {
-        $SQL = "select U.id_usuario, U.nombre_usuario, U.apellido_usuario, U.ci_usuario, U.telefono_usuario, U.celular_usuario, U.clave, U.email_usuario, U.direccion_usuario, U.usuario, U.cargo_usuario from usuario U and $campo not like '$_GET[searchString]%' ORDER BY $sidx $sord offset $start limit $limit";
+        $SQL = "select U.id_usuario, U.nombre_usuario, U.apellido_usuario, U.ci_usuario, U.telefono_usuario, U.celular_usuario, U.clave, U.email_usuario, U.direccion_usuario, U.usuario, U.cargo_usuario from usuario U where $campo not like '$_GET[searchString]%' ORDER BY $sidx $sord offset $start limit $limit";
     }
     if ($_GET['searchOper'] == 'ew') {
-        $SQL = "select U.id_usuario, U.nombre_usuario, U.apellido_usuario, U.ci_usuario, U.telefono_usuario, U.celular_usuario, U.clave, U.email_usuario, U.direccion_usuario, U.usuario, U.cargo_usuario from usuario U and $campo like '%$_GET[searchString]' ORDER BY $sidx $sord offset $start limit $limit";
+        $SQL = "select U.id_usuario, U.nombre_usuario, U.apellido_usuario, U.ci_usuario, U.telefono_usuario, U.celular_usuario, U.clave, U.email_usuario, U.direccion_usuario, U.usuario, U.cargo_usuario from usuario U where $campo like '%$_GET[searchString]' ORDER BY $sidx $sord offset $start limit $limit";
     }
     if ($_GET['searchOper'] == 'en') {
-        $SQL = "select U.id_usuario, U.nombre_usuario, U.apellido_usuario, U.ci_usuario, U.telefono_usuario, U.celular_usuario, U.clave, U.email_usuario, U.direccion_usuario, U.usuario, U.cargo_usuario from usuario U and $campo not like '%$_GET[searchString]' ORDER BY $sidx $sord offset $start limit $limit";
+        $SQL = "select U.id_usuario, U.nombre_usuario, U.apellido_usuario, U.ci_usuario, U.telefono_usuario, U.celular_usuario, U.clave, U.email_usuario, U.direccion_usuario, U.usuario, U.cargo_usuario from usuario U where $campo not like '%$_GET[searchString]' ORDER BY $sidx $sord offset $start limit $limit";
     }
     if ($_GET['searchOper'] == 'cn') {
-        $SQL = "select U.id_usuario, U.nombre_usuario, U.apellido_usuario, U.ci_usuario, U.telefono_usuario, U.celular_usuario, U.clave, U.email_usuario, U.direccion_usuario, U.usuario, U.cargo_usuario from usuario U and $campo like '%$_GET[searchString]%' ORDER BY $sidx $sord offset $start limit $limit";
+        $SQL = "select U.id_usuario, U.nombre_usuario, U.apellido_usuario, U.ci_usuario, U.telefono_usuario, U.celular_usuario, U.clave, U.email_usuario, U.direccion_usuario, U.usuario, U.cargo_usuario from usuario U where $campo like '%$_GET[searchString]%' ORDER BY $sidx $sord offset $start limit $limit";
     }
     if ($_GET['searchOper'] == 'nc') {
-        $SQL = "select U.id_usuario, U.nombre_usuario, U.apellido_usuario, U.ci_usuario, U.telefono_usuario, U.celular_usuario, U.clave, U.email_usuario, U.direccion_usuario, U.usuario, U.cargo_usuario from usuario U and $campo not like '%$_GET[searchString]%' ORDER BY $sidx $sord offset $start limit $limit";
+        $SQL = "select U.id_usuario, U.nombre_usuario, U.apellido_usuario, U.ci_usuario, U.telefono_usuario, U.celular_usuario, U.clave, U.email_usuario, U.direccion_usuario, U.usuario, U.cargo_usuario from usuario U where $campo not like '%$_GET[searchString]%' ORDER BY $sidx $sord offset $start limit $limit";
     }
     if ($_GET['searchOper'] == 'in') {
-        $SQL = "select U.id_usuario, U.nombre_usuario, U.apellido_usuario, U.ci_usuario, U.telefono_usuario, U.celular_usuario, U.clave, U.email_usuario, U.direccion_usuario, U.usuario, U.cargo_usuario from usuario U and $campo like '%$_GET[searchString]%' ORDER BY $sidx $sord offset $start limit $limit";
+        $SQL = "select U.id_usuario, U.nombre_usuario, U.apellido_usuario, U.ci_usuario, U.telefono_usuario, U.celular_usuario, U.clave, U.email_usuario, U.direccion_usuario, U.usuario, U.cargo_usuario from usuario U where $campo like '%$_GET[searchString]%' ORDER BY $sidx $sord offset $start limit $limit";
     }
     if ($_GET['searchOper'] == 'ni') {
-        $SQL = "select U.id_usuario, U.nombre_usuario, U.apellido_usuario, U.ci_usuario, U.telefono_usuario, U.celular_usuario, U.clave, U.email_usuario, U.direccion_usuario, U.usuario, U.cargo_usuario from usuario U and $campo not like '%$_GET[searchString]%' ORDER BY $sidx $sord offset $start limit $limit";
+        $SQL = "select U.id_usuario, U.nombre_usuario, U.apellido_usuario, U.ci_usuario, U.telefono_usuario, U.celular_usuario, U.clave, U.email_usuario, U.direccion_usuario, U.usuario, U.cargo_usuario from usuario U where $campo not like '%$_GET[searchString]%' ORDER BY $sidx $sord offset $start limit $limit";
     }
 }
 $result = pg_query($SQL);
