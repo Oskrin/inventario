@@ -208,7 +208,7 @@ include '../menus/menu.php';
                                                         <div class="controls">
                                                             <select id="iva" name="iva" class="campo">
                                                                 <option value="">......Seleccione......</option>
-                                                                <option value="Si">Si</option> 
+                                                                <option value="Si" selected>Si</option> 
                                                                 <option value="No">No</option> 
                                                             </select>
                                                         </div>
@@ -219,8 +219,8 @@ include '../menus/menu.php';
                                                         <div class="controls">
                                                             <select id="series" name="series" class="campo">
                                                                 <option value="">......Seleccione......</option>
-                                                                <option value="Si" selected>Si</option> 
-                                                                <option value="No">No</option> 
+                                                                <option value="Si">Si</option> 
+                                                                <option value="No" selected>No</option> 
                                                             </select>
                                                         </div>
                                                     </div>

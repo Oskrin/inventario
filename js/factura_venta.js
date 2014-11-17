@@ -28,7 +28,7 @@ function show() {
     var hours = Digital.getHours();
     var minutes = Digital.getMinutes();
     var seconds = Digital.getSeconds();
-    var dn = "AM";
+    var dn = "AM";    
     if (hours > 12) {
         dn = "PM";
         hours = hours - 12;
@@ -1118,7 +1118,7 @@ function guardar_factura() {
                                                         var val = data;
                                                         if (val == 1) {
                                                             alertify.alert("Factura Guardada correctamente", function(){
-                                                                window.open("../reportes_sistema/factura_venta.php?hoja=A4&id="+$("#comprobante").val(),'_blank');
+                                                                window.open("../reportes_sistema/factura_venta_epson.php?id="+$("#comprobante").val(),'_blank');
                                                                 location.reload();
                                                             });
                                                         }
@@ -1184,8 +1184,7 @@ function flecha_atras(){
                 $.getJSON('../procesos/retornar_factura_venta.php?com=' + valor, function(data) {
                     var tama = data.length;
                     if (tama !== 0) {
-                        for (var i = 0; i < tama; i = i + 22)
-                        {
+                        for (var i = 0; i < tama; i = i + 19) {
                             $("#fecha_actual").val(data[i]);
                             $("#hora_actual").val(data[i + 1 ]);
                             $("#digitador").val(data[i + 2 ] + " " + data[i + 3 ] );
@@ -1199,12 +1198,9 @@ function flecha_atras(){
                             $("#telefono_cliente").val(data[i + 9]);
                             $("#correo").val(data[i + 10]);
                             $("#cancelacion").val(data[i + 11]);
-                            $("#autorizacion").val(data[i + 12]);
-                            $("#fecha_auto").val(data[i + 13]);
-                            $("#fecha_caducidad").val(data[i + 14]);
 
-                            $("#tipo_precio").val(data[i + 15]);
-                            if(data[ i+ 16 ] == "Pasivo"){
+                            $("#tipo_precio").val(data[i + 12]);
+                            if(data[ i+ 13 ] == "Pasivo"){
                                 $("#estado").append($("<h3>").text("Anulada"));
                                 $("#estado h3").css("color","red");
                                 $("#btnAnular").attr("disabled", "disabled");
@@ -1214,11 +1210,11 @@ function flecha_atras(){
                                 $("#btnAnular").attr("disabled", false);
                             }
 
-                            $("#total_p").val(data[i + 17]);
-                            $("#total_p2").val(data[i + 18]);
-                            $("#iva").val(data[i + 19]);
-                            $("#desc").val(data[i + 20]);
-                            $("#tot").val(data[i + 21]);
+                            $("#total_p").val(data[i + 14]);
+                            $("#total_p2").val(data[i + 15]);
+                            $("#iva").val(data[i + 16]);
+                            $("#desc").val(data[i + 17]);
+                            $("#tot").val(data[i + 18]);
                         }
                     }
                 });
@@ -1330,8 +1326,7 @@ function flecha_siguiente(){
                 $.getJSON('../procesos/retornar_factura_venta.php?com=' + valor, function(data) {
                     var tama = data.length;
                     if (tama !== 0) {
-                        for (var i = 0; i < tama; i = i + 22)
-                        {
+                        for (var i = 0; i < tama; i = i + 19) {
                             $("#fecha_actual").val(data[i]);
                             $("#hora_actual").val(data[i + 1 ]);
                             $("#digitador").val(data[i + 2 ] + " " + data[i + 3 ] );
@@ -1345,12 +1340,9 @@ function flecha_siguiente(){
                             $("#telefono_cliente").val(data[i + 9]);
                             $("#correo").val(data[i + 10]);
                             $("#cancelacion").val(data[i + 11]);
-                            $("#autorizacion").val(data[i + 12]);
-                            $("#fecha_auto").val(data[i + 13]);
-                            $("#fecha_caducidad").val(data[i + 14]);
-                    
-                            $("#tipo_precio").val(data[i + 15]);
-                            if(data[ i+ 16 ] == "Pasivo"){
+
+                            $("#tipo_precio").val(data[i + 12]);
+                            if(data[ i+ 13 ] == "Pasivo"){
                                 $("#estado").append($("<h3>").text("Anulada"));
                                 $("#estado h3").css("color","red");
                                 $("#btnAnular").attr("disabled", "disabled");
@@ -1359,12 +1351,12 @@ function flecha_siguiente(){
                                 $("#btnAnular").attr("disabled", "disabled");
                                 $("#btnAnular").attr("disabled", false);
                             }
-                    
-                            $("#total_p").val(data[i + 17]);
-                            $("#total_p2").val(data[i + 18]);
-                            $("#iva").val(data[i + 19]);
-                            $("#desc").val(data[i + 20]);
-                            $("#tot").val(data[i + 21]);
+
+                            $("#total_p").val(data[i + 14]);
+                            $("#total_p2").val(data[i + 15]);
+                            $("#iva").val(data[i + 16]);
+                            $("#desc").val(data[i + 17]);
+                            $("#tot").val(data[i + 18]);
                         }
                     }
                 });
@@ -1547,24 +1539,17 @@ return patron.test(te);
 }
 
 function punto(e){
- var key;
-if (window.event)
-{
+var key;
+if (window.event) {
     key = e.keyCode;
-}
-else if (e.which)
-{
+} else if (e.which) {
     key = e.which;
 }
 
-if (key < 48 || key > 57)
-{
-    if (key === 46 || key === 8)
-    {
+if (key < 48 || key > 57) {
+    if (key === 46 || key === 8) {
         return true;
-    }
-    else
-    {
+    } else {
         return false;
     }
 }
@@ -1575,7 +1560,7 @@ function inicio() {
     jQuery().UItoTop({
         easingType: 'easeOutQuart'
     });
-    //jQuery.noConflict();
+
     //////////////para hora///////////
     show();
     ///////////////////
@@ -1624,8 +1609,20 @@ function inicio() {
     $("#btnModificar").click(function(e) {
         e.preventDefault();
     });
-    $("#btnImprimir").click(function (){        
-        window.open("../reportes_sistema/factura_venta.php?hoja=A4&id="+$("#comprobante").val(),'_blank');
+    $("#btnImprimir").click(function (){  
+     $.ajax({
+        type: "POST",
+        url: "../procesos/validacion.php",
+        data: "comprobante=" + $("#comprobante").val() + "&tabla=" + "factura_venta" + "&id_tabla=" + "id_factura_venta" + "&tipo=" + 1,
+        success: function(data) {
+            var val = data;
+            if(val != "") {
+               window.open("../reportes_sistema/factura_venta_epson.php?id="+$("#comprobante").val(),'_blank'); 
+            } else {
+              alertify.alert("Factura no creada!!");
+            }   
+        }
+        });
     });
     $("#btnNuevo").click(function(e) {
         e.preventDefault();
@@ -1708,6 +1705,8 @@ function inicio() {
     
      //////////////para precio////////
     $("#p_venta").on("keypress",punto);
+    $("#precio").on("keypress",punto);
+    $("#adelanto").on("keypress",punto);
     ////////////////////////////////
       
      //////////////////buscar productos codigo////////////////
@@ -1960,8 +1959,6 @@ function inicio() {
     };
     ////////////////////////////////////////////////
 
-    ///////////////////////////////////////////////
-    //
     /////valores meses desglose////////////////////
     $("#meses").spinner({
         min: 1, 
@@ -1982,53 +1979,6 @@ function inicio() {
     $("#meses").attr("disabled", "disabled");
     $("#cuotas").attr("disabled", "disabled");
     /////////////////////////////////
-
-    //////////////para precio////////
-    $("#precio").keypress(function(e) {
-        var key;
-        if (window.event) {
-            key = e.keyCode;
-        } else if (e.which) {
-            key = e.which;
-        }
-
-        if (key < 48 || key > 57) {
-            if (key === 46 || key === 8) {
-                return true;
-            } else {
-                return false;
-            }
-        }
-        return true;
-    });
-    ////////////////////////////////
-
-    ///////////adelanto//////////////
-    $("#adelanto").keypress(function(e) {
-        var key;
-        if (window.event)
-        {
-            key = e.keyCode;
-        }
-        else if (e.which)
-        {
-            key = e.which;
-        }
-
-        if (key < 48 || key > 57)
-        {
-            if (key === 46 || key === 8)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-        return true;
-    });
-    //////////////////////////////
 
     $('.ui-spinner-button').click(function() {
         $(this).siblings('input').change();
@@ -2433,8 +2383,7 @@ function inicio() {
             $.getJSON('../procesos/retornar_factura_venta.php?com=' + valor, function(data) {
                 var tama = data.length;
                 if (tama !== 0) {
-                    for (var i = 0; i < tama; i = i + 22)
-                    {
+                    for (var i = 0; i < tama; i = i + 19) {
                     $("#fecha_actual").val(data[i]);
                     $("#hora_actual").val(data[i + 1 ]);
                     $("#digitador").val(data[i + 2 ] + " " + data[i + 3 ] );
@@ -2448,12 +2397,9 @@ function inicio() {
                     $("#telefono_cliente").val(data[i + 9]);
                     $("#correo").val(data[i + 10]);
                     $("#cancelacion").val(data[i + 11]);
-                    $("#autorizacion").val(data[i + 12]);
-                    $("#fecha_auto").val(data[i + 13]);
-                    $("#fecha_caducidad").val(data[i + 14]);
-                    
-                    $("#tipo_precio").val(data[i + 15]);
-                    if(data[ i+ 16 ] == "Pasivo"){
+
+                    $("#tipo_precio").val(data[i + 12]);
+                    if(data[ i+ 13 ] == "Pasivo"){
                         $("#estado").append($("<h3>").text("Anulada"));
                         $("#estado h3").css("color","red");
                         $("#btnAnular").attr("disabled", "disabled");
@@ -2462,12 +2408,12 @@ function inicio() {
                         $("#btnAnular").attr("disabled", "disabled");
                         $("#btnAnular").attr("disabled", false);
                     }
-                    
-                     $("#total_p").val(data[i + 17]);
-                     $("#total_p2").val(data[i + 18]);
-                     $("#iva").val(data[i + 19]);
-                     $("#desc").val(data[i + 20]);
-                     $("#tot").val(data[i + 21]);
+
+                    $("#total_p").val(data[i + 14]);
+                    $("#total_p2").val(data[i + 15]);
+                    $("#iva").val(data[i + 16]);
+                    $("#desc").val(data[i + 17]);
+                    $("#tot").val(data[i + 18]);
                    }
                 }
             });
@@ -2604,8 +2550,7 @@ function inicio() {
             $.getJSON('../procesos/retornar_factura_venta.php?com=' + valor, function(data) {
                 var tama = data.length;
                 if (tama !== 0) {
-                    for (var i = 0; i < tama; i = i + 22)
-                    {
+                    for (var i = 0; i < tama; i = i + 19) {
                     $("#fecha_actual").val(data[i]);
                     $("#hora_actual").val(data[i + 1 ]);
                     $("#digitador").val(data[i + 2 ] + " " + data[i + 3 ] );
@@ -2619,12 +2564,9 @@ function inicio() {
                     $("#telefono_cliente").val(data[i + 9]);
                     $("#correo").val(data[i + 10]);
                     $("#cancelacion").val(data[i + 11]);
-                    $("#autorizacion").val(data[i + 12]);
-                    $("#fecha_auto").val(data[i + 13]);
-                    $("#fecha_caducidad").val(data[i + 14]);
-                    
-                    $("#tipo_precio").val(data[i + 15]);
-                    if(data[ i+ 16 ] == "Pasivo"){
+
+                    $("#tipo_precio").val(data[i + 12]);
+                    if(data[ i+ 13 ] == "Pasivo"){
                         $("#estado").append($("<h3>").text("Anulada"));
                         $("#estado h3").css("color","red");
                         $("#btnAnular").attr("disabled", "disabled");
@@ -2633,12 +2575,12 @@ function inicio() {
                         $("#btnAnular").attr("disabled", "disabled");
                         $("#btnAnular").attr("disabled", false);
                     }
-                    
-                     $("#total_p").val(data[i + 17]);
-                     $("#total_p2").val(data[i + 18]);
-                     $("#iva").val(data[i + 19]);
-                     $("#desc").val(data[i + 20]);
-                     $("#tot").val(data[i + 21]);
+
+                    $("#total_p").val(data[i + 14]);
+                    $("#total_p2").val(data[i + 15]);
+                    $("#iva").val(data[i + 16]);
+                    $("#desc").val(data[i + 17]);
+                    $("#tot").val(data[i + 18]);
                    }
                 }
             });

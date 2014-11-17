@@ -51,14 +51,13 @@ function inicio() {
             {
                 add: true,
                 edit: true,
-                del: false,
+                del: true,
                 refresh: true,
                 search: true,
                 view: true,
                 addtext: "Nuevo",
                 edittext: "Modificar",
-                refreshtext: "Recargar",
-                viewtext: "Consultar"
+                deltext: "Eliminar"
             },
     {
         recreateForm: true, closeAfterEdit: true, checkOnUpdate: true, reloadAfterSubmit: true, closeOnEscape: true
