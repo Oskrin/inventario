@@ -164,7 +164,7 @@ $cont1++;
                                                                 <td><input type="text" name="codigo" id="codigo" class="campo" style="width: 200px"  placeholder="Buscar..."/></td>
                                                                 <td><input type="text" name="producto" id="producto" class="campo" style="width: 200px"  placeholder="Buscar..."/></td>
                                                                 <td><input type="text" name="cantidad" id="cantidad" class="campo" style="width: 60px" maxlength="10"/></td>
-                                                                <td><input type="text" name="precio" id="precio" style="width: 60px" class="campo"/></td>
+                                                                <td><input type="text" name="precio" id="precio" style="width: 60px" readonly class="campo"/></td>
                                                                 <td><input type="text" name="stock" id="stock" class="campo" style="width: 60px" maxlength="10" value="" readonly/></td>
                                                                 <td><input type="hidden" name="p_venta" id="p_venta" class="campo" style="width: 60px" maxlength="10" value="" readonly/></td>
                                                                 <td><input type="hidden" name="existencia" id="existencia" class="campo" style="width: 60px" maxlength="10" value="" readonly/></td>
