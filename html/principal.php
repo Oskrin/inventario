@@ -42,13 +42,6 @@ include '../menus/menu.php';
         <div class="navbar navbar-fixed-top">
             <div class="navbar-inner">
                 <div class="container">
-
-                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </a>
-
                     <a class="brand" href="">
                         <h1><?php echo $_SESSION['empresa']; ?></h1>				
                     </a>
@@ -85,41 +78,41 @@ include '../menus/menu.php';
                                 </div> <!-- /widget-header -->
 
 
-                                    <div class="widget-content">
+                                <div class="widget-content">
                                     <style type="text/css">
                                         .aur{
                                             background: #222222;
-                                            
+
                                         }
                                     </style>
-                                        <div class="tabbable aur" id="centro" >
-                                            <fieldset>
-                                                <div align="center">
-                                                    <img src="../images/logo_empresa.fw.png" width="70%" /> 
-                                                </div>
-                                            </fieldset>   
-                                        </div>
-                                    </div> 
-                                </div>
-                            </div> 
-
+                                    <div class="tabbable aur" id="centro" >
+                                        <fieldset>
+                                            <div align="center">
+                                                <img src="../images/logo_empresa.fw.png" width="70%" /> 
+                                            </div>
+                                        </fieldset>   
+                                    </div>
+                                </div> 
+                            </div>
                         </div> 
+
                     </div> 
                 </div> 
             </div> 
         </div> 
-        <script type="text/javascript" src="../js/base.js"></script>
+    </div> 
+    <script type="text/javascript" src="../js/base.js"></script>
 
-        <div class="footer">
-            <div class="footer-inner">
-                <div class="container">
-                    <div class="row">
-                        <div class="span12">
-                            &copy; 2014 <a href=""> <?php echo $_SESSION['empresa']; ?></a>.
-                        </div>
+    <div class="footer">
+        <div class="footer-inner">
+            <div class="container">
+                <div class="row">
+                    <div class="span12">
+                        &copy; 2014 <a href=""> <?php echo $_SESSION['empresa']; ?></a>.
                     </div>
                 </div>
-            </div> 
-        </div>
-    </body>
+            </div>
+        </div> 
+    </div>
+</body>
 </html>

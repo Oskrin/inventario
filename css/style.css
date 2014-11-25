@@ -82,6 +82,10 @@ textarea {
     border-radius: 0;
 }
 
+.brand{
+    background-color: rgba(215, 40, 40, 0.9); 
+}
+
 .navbar-fixed-top {
     position: static;
 }

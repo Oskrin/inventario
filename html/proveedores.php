@@ -48,13 +48,6 @@ include '../menus/menu.php';
         <div class="navbar navbar-fixed-top">
             <div class="navbar-inner">
                 <div class="container">
-
-                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </a>
-
                     <a class="brand" href="">
                         <h1><?php echo $_SESSION['empresa']; ?></h1>				
                     </a>
@@ -100,7 +93,7 @@ include '../menus/menu.php';
                                                     <div class="control-group">
                                                         <label class="control-label" for="tipo_docu">Tipo Documento: <font color="red">*</font></label>
                                                         <div class="controls" >
-                                                            <select name="tipo_docu" id="tipo_docu" required class="campo">
+                                                            <select name="tipo_docu" id="tipo_docu" required style="width: 200px">
                                                                 <option value="">......Seleccione......</option>
                                                                 <option value="Cedula">Cedula</option>
                                                                 <option value="Ruc">Ruc</option>
@@ -150,7 +143,7 @@ include '../menus/menu.php';
                                                     <div class="control-group">
                                                         <label class="control-label" for="forma_pago">Formas de Pago: <font color="red">*</font></label>
                                                         <div class="controls" >
-                                                            <select name="forma_pago" id="forma_pago" required class="campo">
+                                                            <select name="forma_pago" id="forma_pago" required style="width: 200px">
                                                                 <option value="">......Seleccione......</option>
                                                                 <option value="Contado">Contado</option>
                                                                 <option value="Credito">Credito</option>
@@ -214,7 +207,7 @@ include '../menus/menu.php';
                                                     <div class="control-group">											
                                                         <label class="control-label" for="principal_pro">Proveedor Principal: <font color="red">*</font></label>
                                                         <div class="controls">
-                                                            <select name="principal_pro" id="principal_pro" required class="campo" >
+                                                            <select name="principal_pro" id="principal_pro" required style="width: 200px">
                                                                 <option value="">......Seleccione......</option>
                                                                 <option value="Si">Si</option>
                                                                 <option value="No">No</option>
