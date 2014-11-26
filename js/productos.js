@@ -442,22 +442,20 @@ function inicio() {
     
     /////////////////verificar repetidos/////////////
     /////valida si ya existe/////
-    $("#cod_prod").blur(function() {
-        if ($("#cod_prod").val().length > 0) {
-            $.ajax({
-                type: "POST",
-                url: "../procesos/comparar_codigo.php",
-                data: "codigo=" + $("#cod_prod").val(),
-                success: function(data) {
-                    var val = data;
-                    if (val == 1) {
-                        $("#cod_prod").val("");
-                        $("#cod_prod").focus();
-                        alertify.alert("Error... El código ya existe");
-                    }
+    $("#cod_prod").keyup(function() {
+        $.ajax({
+            type: "POST",
+            url: "../procesos/comparar_codigo.php",
+            data: "codigo=" + $("#cod_prod").val(),
+            success: function(data) {
+                var val = data;
+                if (val == 1) {
+                    $("#cod_prod").val("");
+                    $("#cod_prod").focus();
+                    alertify.error("Error... El código ya existe");
                 }
-            });
-        }
+            }
+        });
     });
     /////////////////////////////////////////////////
 
@@ -525,22 +523,7 @@ function inicio() {
     $("#clave_permiso").dialog(dialogo3);
     $("#seguro").dialog(dialogo4);
     ///////////////////////////////////////////////
-    
-    //////////////imput spinner////////////////
-    $("#stock").spinner({
-        min: 1
-    });
-    $("#minimo").spinner({
-        min: 1
-    });
-    $("#maximo").spinner({
-        min: 1
-    });
-    $("#descuento").spinner({
-        min: 1
-    });
-    /////////////////////////////////
-    
+      
     /////////calendarios///////
     $("#fecha_creacion").datepicker({
         dateFormat: 'yy-mm-dd'
@@ -550,10 +533,9 @@ function inicio() {
     ////calcular datos/////
     $("#utilidad_minorista").keyup(function() {
         if($("#precio_compra").val() === ""){
-            alertify.alert("Error... Ingrese precio compra", function (){
-                $("#precio_compra").focus();   
-                $("#utilidad_minorista").val(""); 
-            });
+             $("#precio_compra").focus();   
+             $("#utilidad_minorista").val(""); 
+             alertify.error("Error... Ingrese precio compra");
         }else{
             if ($("#utilidad_minorista").val() === "") {
                 $("#precio_minorista").val("");
@@ -567,10 +549,9 @@ function inicio() {
 
     $("#utilidad_mayorista").keyup(function() {
         if($("#precio_compra").val() === ""){
-            alertify.alert("Error... Ingrese precio compra", function (){
-                $("#precio_compra").focus();   
-                $("#utilidad_mayorista").val(""); 
-            });
+            $("#precio_compra").focus();   
+            $("#utilidad_mayorista").val("");
+            alertify.error("Error... Ingrese precio compra");
         }else{
             if ($("#utilidad_mayorista").val() === "") {
                 $("#precio_mayorista").val("");
@@ -609,11 +590,12 @@ function inicio() {
             {name: 'fecha_creacion', index: 'fecha_creacion', editable: true, align: 'center', width: '120', search: false, frozen: true, editoptions: {readonly: 'readonly'}, formoptions: {elmprefix: ""}},
             {name: 'modelo', index: 'modelo', editable: true, align: 'center', width: '120', search: false, frozen: true, editoptions: {readonly: 'readonly'}, formoptions: {elmprefix: ""}},
             {name: 'aplicacion', index: 'aplicacion', editable: true, align: 'center', width: '120', search: false, frozen: true, editoptions: {readonly: 'readonly'}, formoptions: {elmprefix: ""}},
-            {name: 'vendible', index: 'vendible', editable: true, align: 'center', width: '120', search: false, frozen: true, editoptions: {readonly: 'readonly'}, formoptions: {elmprefix: ""}},
-            {name: 'inventario', index: 'inventario', editable: true, align: 'center', width: '120', search: false, frozen: true, editoptions: {readonly: 'readonly'}, formoptions: {elmprefix: ""}},
+            {name: 'vendible', index: 'vendible', editable: true, align: 'center',hidden: true, width: '120', search: false, frozen: true, editoptions: {readonly: 'readonly'}, formoptions: {elmprefix: ""}},
+            {name: 'inventario', index: 'inventario', editable: true, align: 'center',hidden: true , width: '120', search: false, frozen: true, editoptions: {readonly: 'readonly'}, formoptions: {elmprefix: ""}},
         ],
         rowNum: 10,
         width: 830,
+        height: 200,
         rowList: [10, 20, 30],
         pager: jQuery('#pager'),
         sortname: 'cod_productos',
