@@ -13,8 +13,7 @@
 /* Menu box
 ===================*/
 
-	.sm-blue {
-		background:#3193c0; /* Old browsers */
+	.sm-blue {		
 		background-image:url(css-gradients-fallback/main-menu-bg.png);		
 	}
 	.sm-blue-vertical {
@@ -59,24 +58,13 @@
 	.sm-blue a.highlighted {
 		background:#1983af; /* Old browsers */
 		background-image:url(css-gradients-fallback/main-item-hover-bg.png);
-		background-image:-moz-linear-gradient(top,#34a2d0 0%,#006791 100%);
-		background-image:-webkit-gradient(linear,left top, left bottom,color-stop(0%,#34a2d0),color-stop(100%,#006791));
-		background-image:-webkit-linear-gradient(top,#34a2d0 0%,#006791 100%);
-		background-image:-o-linear-gradient(top,#34a2d0 0%,#006791 100%);
-		background-image:-ms-linear-gradient(top,#34a2d0 0%,#006791 100%);
-		background-image:linear-gradient(top,#34a2d0 0%,#006791 100%);
+		
 		color:#fff;
 	}
 	.sm-blue-vertical a {
 		padding:9px 40px 8px 23px;
 		background:#3193c0; /* Old browsers */
-		background-image:url(css-gradients-fallback/vertical-main-item-bg.png);
-		background-image:-moz-linear-gradient(top,#3fa3d1 0%,#2586b3 100%);
-		background-image:-webkit-gradient(linear,left top,left bottom,color-stop(0%,#3fa3d1),color-stop(100%,#2586b3));
-		background-image:-webkit-linear-gradient(top,#3fa3d1 0%,#2586b3 100%);
-		background-image:-o-linear-gradient(top,#3fa3d1 0%,#2586b3 100%);
-		background-image:-ms-linear-gradient(top,#3fa3d1 0%,#2586b3 100%);
-		background-image:linear-gradient(top,#3fa3d1 0%,#2586b3 100%);
+		background-image:url(css-gradients-fallback/vertical-main-item-bg.png);		
 	}
 	.sm-blue ul a {
 		padding:9px 40px 8px 23px;
@@ -89,12 +77,6 @@
 	.sm-blue ul a.highlighted {
 		background:#3193c0; /* Old browsers */
 		background-image:url(css-gradients-fallback/main-menu-bg.png);
-		background-image:-moz-linear-gradient(top,#4cb1e0 0%,#1675a1 100%);
-		background-image:-webkit-gradient(linear,left top,left bottom,color-stop(0%,#4cb1e0),color-stop(100%,#1675a1));
-		background-image:-webkit-linear-gradient(top,#4cb1e0 0%,#1675a1 100%);
-		background-image:-o-linear-gradient(top,#4cb1e0 0%,#1675a1 100%);
-		background-image:-ms-linear-gradient(top,#4cb1e0 0%,#1675a1 100%);
-		background-image:linear-gradient(top,#4cb1e0 0%,#1675a1 100%);
 		color:#fff;
 		text-shadow:0 1px 0 rgba(0,0,0,0.3);
 	}
@@ -167,7 +149,7 @@
 ===================*/
 
 	.sm-blue li {
-		border-left:1px solid #1a8bb9;
+		border-left:1px solid #FFF;
 	}
 	.sm-blue li:first-child,
 	.sm-blue-vertical li,
@@ -281,12 +263,7 @@
 		padding:10px 5px 10px 28px !important; /* add some additional left padding to make room for the sub indicator */
 		background:#3193c0 !important; /* Old browsers */
 		background-image:url(css-gradients-fallback/vertical-main-item-bg.png) !important;
-		background-image:-moz-linear-gradient(top,#3fa3d1 0%,#2586b3 100%) !important;
-		background-image:-webkit-gradient(linear,left top,left bottom,color-stop(0%,#3fa3d1),color-stop(100%,#2586b3)) !important;
-		background-image:-webkit-linear-gradient(top,#3fa3d1 0%,#2586b3 100%) !important;
-		background-image:-o-linear-gradient(top,#3fa3d1 0%,#2586b3 100%) !important;
-		background-image:-ms-linear-gradient(top,#3fa3d1 0%,#2586b3 100%) !important;
-		background-image:linear-gradient(top,#3fa3d1 0%,#2586b3 100%) !important;
+		
 		color:#fff !important;
 	}
 	.sm-blue ul a {
@@ -297,12 +274,7 @@
 	.sm-blue a.current {
 		background:#006892 !important; /* Old browsers */
 		background-image:url(css-gradients-fallback/current-item-bg.png) !important;
-		background-image:-moz-linear-gradient(top,#005a84 0%,#00749f 100%) !important;
-		background-image:-webkit-gradient(linear,left top,left bottom,color-stop(0%,#005a84),color-stop(100%,#00749f)) !important;
-		background-image:-webkit-linear-gradient(top,#005a84 0%,#00749f 100%) !important;
-		background-image:-o-linear-gradient(top,#005a84 0%,#00749f 100%) !important;
-		background-image:-ms-linear-gradient(top,#005a84 0%,#00749f 100%) !important;
-		background-image:linear-gradient(top,#005a84 0%,#00749f 100%) !important;
+		
 		color:#fff !important;
 	}
 	/* add some text indentation for the 2+ level sub menu items */

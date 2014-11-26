@@ -82,10 +82,6 @@ textarea {
     border-radius: 0;
 }
 
-.brand{
-    background-color: rgba(215, 40, 40, 0.9); 
-}
-
 .navbar-fixed-top {
     position: static;
 }
@@ -98,6 +94,9 @@ textarea {
     font-weight: 600;
     position: relative;
     top: 2px;
+    font-family: 'Arial Bold';
+    font-size: 50px;
+    
 }
 
 .navbar .search-query {
