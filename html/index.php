@@ -38,7 +38,7 @@ session_destroy();
     background-size: cover;">
         <div class="account-container">
             <div class="content clearfix">
-                <form action="" method="post" name="form_admin">
+                <form action="" method="post" name="form_admin" class="dc-form">
                     <h1>Usuario</h1>
                     <div class="login-fields">
                         <p>Por favor, proporcione sus datos</p>
@@ -58,14 +58,14 @@ session_destroy();
                             <input id="Field" name="Field" type="checkbox" class="field login-checkbox" value="First Choice" tabindex="4" />
                             <label class="choice" for="Field">Recordar conexión</label>
                         </span>
-                        <button class="button btn btn-success btn-large" id="btnIngreso">Ingresar</button>
+                        <button class="button btn dc btn-large" id="btnIngreso">Ingresar</button>
                     </div>
                 </form>                
             </div>
             <div class="member span4">
                 <div class="member-thumbnail">
                     <a href="#">
-                        <img src="../images/system.jpg" alt="avatar" />
+                        <img src="../images/system.fw.png" alt="avatar" />
                     </a>
                 </div>
                 <ul class="member-menu">

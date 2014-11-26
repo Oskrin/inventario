@@ -73,7 +73,17 @@ textarea {
 .navbar .container {
     position: relative;
 }
-
+.dc{
+    color: #FFF;
+    background: #57294D;
+}
+.dc:hover{
+    color: #FFF;
+    background: #31163F;
+}
+.dc-form h1{
+ text-align: center;
+}
 .navbar-inner {
     padding: 7px 0;
     background: url(../images/banner.fw.png)!important;
@@ -96,7 +106,7 @@ textarea {
     top: 2px;
     font-family: 'Arial Bold';
     font-size: 50px;
-    
+
 }
 
 .navbar .search-query {
