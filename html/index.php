@@ -75,7 +75,6 @@ session_destroy();
                             <h3>P&S Systems</h3>
                             <div class="position">Desarrollo de Software</div>
                         </div>
-                        
                     </li>
                 </ul>
             </div>

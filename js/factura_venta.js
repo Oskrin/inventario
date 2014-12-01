@@ -159,7 +159,7 @@ function entrar() {
             } else {
                 if ($("#cantidad").val() === "") {
                     $("#cantidad").focus();
-                    alertify.alert("Ingrese una cantidad");
+//                    alertify.alert("Ingrese una cantidad");
                 } else {
                     $("#p_venta").focus();
                 }
@@ -183,7 +183,7 @@ function entrar2() {
             } else {
                 if ($("#cantidad").val() === "") {
                     $("#cantidad").focus();
-                    alertify.alert("Ingrese una cantidad");
+//                    alertify.alert("Ingrese una cantidad");
                 } else {
                     if ($("#p_venta").val() === "") {
                         $("#p_venta").focus();
@@ -212,7 +212,7 @@ function entrar3() {
             } else {
                 if ($("#cantidad").val() === "") {
                     $("#cantidad").focus();
-                    alertify.alert("Ingrese una cantidad");
+//                    alertify.alert("Ingrese una cantidad");
                 } else {
                     if ($("#p_venta").val() === "") {
                         $("#p_venta").focus();
@@ -1564,20 +1564,7 @@ function inicio() {
     //////////////para hora///////////
     show();
     ///////////////////
-    //
-    /////////////////SPINNER//////////
-    $("#descuento").spinner({
-        min: 0, 
-        max: 0
-    });
-    
-    //////////validacion ruc cedula/////////////
-    $("#ruc_ci").validarCedulaEC({
-        strict: false
-    });
-    ///////////////////////////////// 
-    ///////////////////////////////////
-    //
+
     /////////////validador factura//////
     if ($("#num_oculto").val() === "") {
         $("#num_factura").val("");
@@ -1738,11 +1725,12 @@ function inicio() {
                 $("#cod_producto").val(ui.item.cod_producto);
                 $("#des").val(ui.item.des);
                 $("#inventar").val(ui.item.inventar);
-                $("#descuento").val("");
-                $("#descuento").spinner({
-                    min: 0, 
-                    max: $("#des").val()
-                    });
+//                $("#descuento").val("");
+                $("#descuento").attr("Max", 4);
+//                $("#descuento").spinner({
+//                    min: 0, 
+//                    max: $("#des").val()
+//                    });
                 return false;
                 }
 
@@ -1779,10 +1767,10 @@ function inicio() {
                     $("#des").val(ui.item.des);
                     $("#inventar").val(ui.item.inventar);
                     $("#descuento").val("");
-                    $("#descuento").spinner({
-                        min: 0, 
-                        max: $("#des").val()
-                        });
+//                    $("#descuento").spinner({
+//                        min: 0, 
+//                        max: $("#des").val()
+//                        });
                     return false;
                     }
                     }).data("ui-autocomplete")._renderItem = function(ul, item) {
@@ -1825,10 +1813,10 @@ function inicio() {
                 $("#des").val(ui.item.des);
                 $("#inventar").val(ui.item.inventar);
                 $("#descuento").val("");
-                $("#descuento").spinner({
-                    min: 0, 
-                    max: $("#des").val()
-                    });
+//                $("#descuento").spinner({
+//                    min: 0, 
+//                    max: $("#des").val()
+//                    });
                 return false;
                 }
 
@@ -1865,10 +1853,10 @@ function inicio() {
                     $("#des").val(ui.item.des);
                     $("#inventar").val(ui.item.inventar);
                     $("#descuento").val("");
-                    $("#descuento").spinner({
-                        min: 0, 
-                        max: $("#des").val()
-                        });
+//                    $("#descuento").spinner({
+//                        min: 0, 
+//                        max: $("#des").val()
+//                        });
                     return false;
                     }
 
@@ -1958,13 +1946,6 @@ function inicio() {
         .appendTo(ul);
     };
     ////////////////////////////////////////////////
-
-    /////valores meses desglose////////////////////
-    $("#meses").spinner({
-        min: 1, 
-        max: 3
-    });
-    /////////////////////////////////////////
 
     /////////////////////////////////
     $("#cantidad").validCampoFranz("0123456789");
