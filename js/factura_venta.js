@@ -1725,12 +1725,11 @@ function inicio() {
                 $("#cod_producto").val(ui.item.cod_producto);
                 $("#des").val(ui.item.des);
                 $("#inventar").val(ui.item.inventar);
-//                $("#descuento").val("");
-                $("#descuento").attr("Max", 4);
-//                $("#descuento").spinner({
-//                    min: 0, 
-//                    max: $("#des").val()
-//                    });
+                $("#descuento").val("");
+                $("#descuento").spinner({
+                    min: 0, 
+                    max: $("#des").val()
+                    });
                 return false;
                 }
 
@@ -1767,10 +1766,10 @@ function inicio() {
                     $("#des").val(ui.item.des);
                     $("#inventar").val(ui.item.inventar);
                     $("#descuento").val("");
-//                    $("#descuento").spinner({
-//                        min: 0, 
-//                        max: $("#des").val()
-//                        });
+                    $("#descuento").spinner({
+                        min: 0, 
+                        max: $("#des").val()
+                        });
                     return false;
                     }
                     }).data("ui-autocomplete")._renderItem = function(ul, item) {
@@ -1813,10 +1812,10 @@ function inicio() {
                 $("#des").val(ui.item.des);
                 $("#inventar").val(ui.item.inventar);
                 $("#descuento").val("");
-//                $("#descuento").spinner({
-//                    min: 0, 
-//                    max: $("#des").val()
-//                    });
+                $("#descuento").spinner({
+                    min: 0, 
+                    max: $("#des").val()
+                    });
                 return false;
                 }
 
@@ -1853,10 +1852,10 @@ function inicio() {
                     $("#des").val(ui.item.des);
                     $("#inventar").val(ui.item.inventar);
                     $("#descuento").val("");
-//                    $("#descuento").spinner({
-//                        min: 0, 
-//                        max: $("#des").val()
-//                        });
+                    $("#descuento").spinner({
+                        min: 0, 
+                        max: $("#des").val()
+                        });
                     return false;
                     }
 

@@ -30,12 +30,12 @@ session_destroy();
         <script type="text/javascript" src="../js/signin.js"></script>
         <script type="text/javascript" src="../js/alertify.min.js"></script>
     </head>
-    
+
     <body style="background: url(../images/fondo.fw.png)no-repeat fixed center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;">
+          -webkit-background-size: cover;
+          -moz-background-size: cover;
+          -o-background-size: cover;
+          background-size: cover;">
         <div class="account-container">
             <div class="content clearfix">
                 <form action="" method="post" name="form_admin" class="dc-form">
@@ -64,7 +64,7 @@ session_destroy();
             </div>
             <div class="member span4">
                 <div class="member-thumbnail">
-                    <a href="#">
+                    <a href="">
                         <img src="../images/system.fw.png" alt="avatar" />
                     </a>
                 </div>

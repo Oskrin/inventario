@@ -1,29 +1,4 @@
 <?php
-/**
- * PHPExcel
- *
- * Copyright (C) 2006 - 2010 PHPExcel
- *
- * This library is free software; you can redistribute it and/or
- * modify it under the terms of the GNU Lesser General Public
- * License as published by the Free Software Foundation; either
- * version 2.1 of the License, or (at your option) any later version.
- *
- * This library is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
- * Lesser General Public License for more details.
- *
- * You should have received a copy of the GNU Lesser General Public
- * License along with this library; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
- *
- * @category   PHPExcel
- * @package    PHPExcel
- * @copyright  Copyright (c) 2006 - 2010 PHPExcel (http://www.codeplex.com/PHPExcel)
- * @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt	LGPL
- * @version    1.7.4, 2010-08-26
- */
 
 date_default_timezone_set('America/Guayaquil');
 require_once "PHPExcel.php";
@@ -33,17 +8,18 @@ $objPHPExcel = new PHPExcel();
 $Archivo = "reporte_productos_existencia_minima.xls";
 
 include '../procesos/base.php';
+session_start();
 conectarse();
 
 
 // Propiedades de archivo Excel
 $objPHPExcel->getProperties()->setCreator("P&S Systems")
-->setLastModifiedBy("P&S Systems")
-->setTitle("Reporte XLS")
-->setSubject("Reporte de productos con existencia mínima")
-->setDescription("")
-->setKeywords("")
-->setCategory("");
+        ->setLastModifiedBy("P&S Systems")
+        ->setTitle("Reporte XLS")
+        ->setSubject("Reporte de productos con existencia mínima")
+        ->setDescription("")
+        ->setKeywords("")
+        ->setCategory("");
 
 
 //PROPIEDADES DEL  LA CELDA
@@ -64,76 +40,76 @@ $objPHPExcel->getActiveSheet()->getColumnDimension('G')->setWidth(20);
 //CABECERA DE LA CONSULTA
 $y = 6;
 $objPHPExcel->setActiveSheetIndex(0)
-->setCellValue("B".$y, 'Código')
-->setCellValue("C".$y, 'Atículo')
-->setCellValue("D".$y, 'Precio Minorista')
-->setCellValue("E".$y, 'Precio Mayorista')
-->setCellValue("F".$y, 'Stock')
-->setCellValue("G".$y, 'Stock Mínimo');
+        ->setCellValue("B" . $y, 'Código')
+        ->setCellValue("C" . $y, 'Atículo')
+        ->setCellValue("D" . $y, 'Precio Minorista')
+        ->setCellValue("E" . $y, 'Precio Mayorista')
+        ->setCellValue("F" . $y, 'Stock')
+        ->setCellValue("G" . $y, 'Stock Mínimo');
 
 
 $objPHPExcel->getActiveSheet()
-            ->getStyle('B6:G6')            
-            ->getFill()
-            ->setFillType(PHPExcel_Style_Fill::FILL_SOLID)            
-            ->getStartColor()->setARGB('FFEEEEEE');
+        ->getStyle('B6:G6')
+        ->getFill()
+        ->setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+        ->getStartColor()->setARGB('FFEEEEEE');
 
 $objPHPExcel->getActiveSheet()
-            ->getStyle('B6:G6')->getAlignment()
-            ->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
- $borders = array(
-      'borders' => array(
+        ->getStyle('B6:G6')->getAlignment()
+        ->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+$borders = array(
+    'borders' => array(
         'allborders' => array(
-          'style' => PHPExcel_Style_Border::BORDER_THIN,
-          'color' => array('argb' => 'FF000000'),
+            'style' => PHPExcel_Style_Border::BORDER_THIN,
+            'color' => array('argb' => 'FF000000'),
         )
-      ),
- );
+    ),
+);
 
 $objPHPExcel->getActiveSheet()
-            ->getStyle('B6:G6')
-			      ->applyFromArray($borders);
+        ->getStyle('B6:G6')
+        ->applyFromArray($borders);
 
 //////////////////////CABECERA DE LA CONSULTA
 $objPHPExcel->setActiveSheetIndex(0)
-->setCellValue("B2", 'LISTA DE PRODUCTOS EN EXISTENCIA MÍNIMA');
+        ->setCellValue("B2", 'LISTA DE PRODUCTOS EN EXISTENCIA MÍNIMA');
 $objPHPExcel->getActiveSheet()
-            ->getStyle('B2:F2')->getAlignment()
-            ->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+        ->getStyle('B2:F2')->getAlignment()
+        ->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
 
 $objPHPExcel->setActiveSheetIndex(0)
-            ->mergeCells('B2:G2');
+        ->mergeCells('B2:G2');
 
 $objPHPExcel->getActiveSheet()
-            ->getStyle("B2:G2")
-            ->getFont()
-            ->setBold(true)
-            ->setName('Verdana')
-            ->setSize(20);
+        ->getStyle("B2:G2")
+        ->getFont()
+        ->setBold(true)
+        ->setName('Verdana')
+        ->setSize(20);
 //////////////////////////
 $objPHPExcel->setActiveSheetIndex(0)
-            ->setCellValue("B4", 'Empresa:P&S Systems');
+        ->setCellValue("B4", 'Empresa: ' . $_SESSION['empresa'] . '');
 $objPHPExcel->setActiveSheetIndex(0)
-            ->mergeCells('B4:C4');
+        ->mergeCells('B4:C4');
 
 $objPHPExcel->getActiveSheet()
-            ->getStyle("B4:C4")
-            ->getFont()
-            ->setBold(false)
-            ->setName('Verdana')
-            ->setSize(12);   
+        ->getStyle("B4:C4")
+        ->getFont()
+        ->setBold(false)
+        ->setName('Verdana')
+        ->setSize(12);
 //////////////////////////
 $objPHPExcel->setActiveSheetIndex(0)
-            ->setCellValue("D4", 'Propietario:Santiago Yepez');
+        ->setCellValue("D4", 'Propietario: ' . $_SESSION['propietario'] . '');
 $objPHPExcel->setActiveSheetIndex(0)
-            ->mergeCells('D4:E4');
+        ->mergeCells('D4:E4');
 
 $objPHPExcel->getActiveSheet()
-            ->getStyle("D4:E4")
-            ->getFont()
-            ->setBold(false)
-            ->setName('Verdana')
-            ->setSize(12);    
+        ->getStyle("D4:E4")
+        ->getFont()
+        ->setBold(false)
+        ->setName('Verdana')
+        ->setSize(12);
 /////////////////////////
 $objDrawing = new PHPExcel_Worksheet_Drawing();
 $objDrawing->setName('PHPExcel logo');
@@ -142,53 +118,50 @@ $objDrawing->setPath('../images/logo_empresa.jpg');       //
 $objDrawing->setHeight(70);                 // sets the image height to 36px (overriding the actual image height); 
 $objDrawing->setCoordinates('G2');    // pins the top-left corner of the image to cell D24
 $objDrawing->setOffsetX(20);                // pins the top left 
-$objDrawing->setWorksheet($objPHPExcel->getActiveSheet());     
+$objDrawing->setWorksheet($objPHPExcel->getActiveSheet());
 //DETALLE DE LA CONSULTA
-$sql=pg_query("select codigo,cod_barras,articulo,iva_minorista,iva_mayorista,stock,stock_minimo from productos where stock::integer  < stock_minimo::integer  order by cod_productos");
-while($row=pg_fetch_row($sql))       
-{
+$sql = pg_query("select codigo,cod_barras,articulo,iva_minorista,iva_mayorista,stock,stock_minimo from productos where stock::integer  < stock_minimo::integer  order by cod_productos");
+while ($row = pg_fetch_row($sql)) {
     $y++;
     //BORDE DE LA CELDA
-		$objPHPExcel->setActiveSheetIndex(0)
-    ->getStyle('B'.$y.":G".$y)
-    ->applyFromArray($borders);
+    $objPHPExcel->setActiveSheetIndex(0)
+            ->getStyle('B' . $y . ":G" . $y)
+            ->applyFromArray($borders);
 
     //MOSTRAMOS LOS VALORES
     $objPHPExcel->setActiveSheetIndex(0)
-		->setCellValue("B".$y, ' '.$row[0])
-		->setCellValue("C".$y, $row[2])
-        ->setCellValue("D".$y, $row[3])
-        ->setCellValue("E".$y, $row[4])
-        ->setCellValue("F".$y, $row[5])    
-        ->setCellValue("G".$y, $row[6]); 
+            ->setCellValue("B" . $y, ' ' . $row[0])
+            ->setCellValue("C" . $y, $row[2])
+            ->setCellValue("D" . $y, $row[3])
+            ->setCellValue("E" . $y, $row[4])
+            ->setCellValue("F" . $y, $row[5])
+            ->setCellValue("G" . $y, $row[6]);
     $objPHPExcel->getActiveSheet()
-    ->getStyle('B'.$y)->getAlignment()    
-    ->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+            ->getStyle('B' . $y)->getAlignment()
+            ->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
     $objPHPExcel->getActiveSheet()
-    ->getStyle('C'.$y)->getAlignment()    
-    ->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+            ->getStyle('C' . $y)->getAlignment()
+            ->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
     $objPHPExcel->getActiveSheet()
-    ->getStyle('D'.$y)->getAlignment()    
-    ->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+            ->getStyle('D' . $y)->getAlignment()
+            ->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
     $objPHPExcel->getActiveSheet()
-    ->getStyle('E'.$y)->getAlignment()    
-    ->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+            ->getStyle('E' . $y)->getAlignment()
+            ->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
     $objPHPExcel->getActiveSheet()
-    ->getStyle('F'.$y)->getAlignment()    
-    ->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+            ->getStyle('F' . $y)->getAlignment()
+            ->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
     $objPHPExcel->getActiveSheet()
-    ->getStyle('G'.$y)->getAlignment()    
-    ->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);    
+            ->getStyle('G' . $y)->getAlignment()
+            ->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
 }
 
 //DATOS DE LA SALIDA DEL EXCEL
 header('Content-Type: application/vnd.ms-excel');
-//header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-header('Content-Disposition: attachment; filename="'.$Archivo.'"');
+header('Content-Disposition: attachment; filename="' . $Archivo . '"');
 header('Cache-Control: max-age=0');
 $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel5');
 $objWriter->save('php://output');
 
 exit;
-
 ?>

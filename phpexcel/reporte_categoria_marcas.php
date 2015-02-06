@@ -7,6 +7,7 @@ $objPHPExcel = new PHPExcel();
 $Archivo = "reporte_productos_marcas_categorias.xls";
 
 include '../procesos/base.php';
+session_start();
 conectarse();
 
 
@@ -89,7 +90,7 @@ $objPHPExcel->getActiveSheet()
             ->setSize(18);
 //////////////////////////
 $objPHPExcel->setActiveSheetIndex(0)
-            ->setCellValue("B4", 'Empresa:P&S Systems');
+            ->setCellValue("B4", 'Empresa: ' . $_SESSION['empresa'] . '');
 $objPHPExcel->setActiveSheetIndex(0)
             ->mergeCells('B4:C4');
 
@@ -101,7 +102,7 @@ $objPHPExcel->getActiveSheet()
             ->setSize(12);   
 //////////////////////////
 $objPHPExcel->setActiveSheetIndex(0)
-            ->setCellValue("D4", 'Propietario:Santiago Yepez');
+            ->setCellValue("D4", 'Propietario: ' . $_SESSION['propietario'] . '');
 $objPHPExcel->setActiveSheetIndex(0)
             ->mergeCells('D4:E4');
 
@@ -181,7 +182,6 @@ while($row=pg_fetch_row($sql))
 
 //DATOS DE LA SALIDA DEL EXCEL
 header('Content-Type: application/vnd.ms-excel');
-//header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
 header('Content-Disposition: attachment; filename="'.$Archivo.'"');
 header('Cache-Control: max-age=0');
 $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel5');
